@@ -385,6 +385,7 @@ TEST_F(fisheyeTest, EtimateUncertainties)
     CV_Assert(errors.alpha == 0);
 }
 
+#ifndef WINRT
 TEST_F(fisheyeTest, rectify)
 {
     const std::string folder =combine(datasets_repository_path, "calib-3_stereo_from_JY");
@@ -433,6 +434,7 @@ TEST_F(fisheyeTest, rectify)
              EXPECT_MAT_NEAR(correct, rectification, 1e-10);
      }
 }
+#endif
 
 TEST_F(fisheyeTest, stereoCalibrate)
 {
